@@ -47,5 +47,6 @@ export class HeroFormComponent {
 
   proceed() {
     alert('Account successfully created!');
+    window.location.reload();
   }
 }

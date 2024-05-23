@@ -1,88 +1,107 @@
-<div [hidden]="submitted">
-  <h1>Login Form</h1>
-  <div class="form-container">
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          class="form-control"
-          id="username"
-          required
-          [(ngModel)]="model.username"
-          name="username"
-          #username="ngModel"
-        />
-        <div
-          [hidden]="username.valid || username.pristine"
-          class="alert alert-danger"
-        >
-          Username is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          required
-          id="password"
-          [(ngModel)]="model.password"
-          name="password"
-        />
-      </div>
-
-      <div class="form-group" *ngIf="showDept">
-        <label for="dept">Department</label>
-        <select
-          class="form-control"
-          id="dept"
-          required
-          [(ngModel)]="model.dept"
-          name="dept"
-        >
-          <option *ngFor="let unit of dept" [value]="unit">{{ unit }}</option>
-        </select>
-      </div>
-      <div class="actionbtn">
-        <div *ngIf="!showDept">
-          <button
-            type="submit"
-            class="btn btn-success"
-            [disabled]="!loginForm.form.valid"
-          >
-            Login
-          </button>
-        </div>
-        <div>
-          <button
-            type="button"
-            class="btn btn-default"
-            (click)="newLogin(); loginForm.resetForm(); showProceed = true"
-          >
-            Create Account
-          </button>
-        </div>
-      </div>
-
-      <div *ngIf="showProceed">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="proceed()"
-          [disabled]="!loginForm.form.valid"
-        >
-          Proceed
-        </button>
-      </div>
-    </form>
+<div class="main">
+  <div class="header">
+    <h1>Educator's</h1>
+    <span>portal</span>
   </div>
-</div>
+  <div class="form-container">
+    <div [hidden]="submitted">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            required
+            [(ngModel)]="model.username"
+            name="username"
+            #username="ngModel"
+          />
+          <div
+            [hidden]="username.valid || username.pristine"
+            class="alert alert-danger"
+          >
+            Username is required
+          </div>
+        </div>
 
-<div [hidden]="!submitted">
-  <div class="notification">
-    <h3>Login Success!</h3>
-    <button class="close" (click)="closeBtn()">Go Back</button>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            required
+            id="password"
+            [(ngModel)]="model.password"
+            name="password"
+            #password="ngModel"
+          />
+          <div
+            [hidden]="password.valid || password.pristine"
+            class="alert alert-danger"
+          >
+            Passoword is required
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf="showDept">
+          <label for="dept">Department</label>
+          <select
+            class="form-control"
+            id="dept"
+            required
+            [(ngModel)]="model.dept"
+            name="dept"
+          >
+            <option *ngFor="let unit of dept" [value]="unit">{{ unit }}</option>
+          </select>
+        </div>
+        <div class="actionbtn">
+          <div *ngIf="!showDept">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!loginForm.form.valid"
+            >
+              Login
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-default"
+              (click)="newLogin(); loginForm.resetForm(); showProceed = true"
+            >
+              Create Account
+            </button>
+          </div>
+
+          <div *ngIf="showProceed">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="proceed()"
+              [disabled]="!loginForm.form.valid"
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+        <div class="disclaimer">
+          <div><input type="checkbox" /></div>
+
+          <label for="terms">
+            I&apos;ve read and agree to Terms & Conditions</label
+          >
+        </div>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <div class="notification">
+        <h3>Login Success!</h3>
+        <button class="close" (click)="closeBtn()">Go Back</button>
+      </div>
+    </div>
   </div>
 </div>

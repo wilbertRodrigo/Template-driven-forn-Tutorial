@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: red;
+  background-image: url("./assets/login.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}

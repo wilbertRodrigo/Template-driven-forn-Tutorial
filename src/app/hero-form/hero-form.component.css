@@ -1,3 +1,20 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
 .form-container {
   width: 400px;
   margin: 20px auto;
@@ -7,7 +24,6 @@ h1 {
 }
 .actionbtn {
   display: flex;
-
   flex-direction: row;
   justify-content: center;
   gap: 20px;
@@ -16,15 +32,22 @@ h1 {
 .close {
   border: 1px solid black;
   color: black;
+  background-color: green;
+  color: white;
 }
 .notification {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 300px;
-
   margin: 50px auto;
 }
 h3 {
   text-align: center;
+}
+.disclaimer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
