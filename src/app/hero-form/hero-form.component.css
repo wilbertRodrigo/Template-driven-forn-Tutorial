@@ -1,0 +1,30 @@
+.form-container {
+  width: 400px;
+  margin: 20px auto;
+}
+h1 {
+  text-align: center;
+}
+.actionbtn {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.close {
+  border: 1px solid black;
+  color: black;
+}
+.notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+
+  margin: 50px auto;
+}
+h3 {
+  text-align: center;
+}
